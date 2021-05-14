@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tee Ceramics</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	
+	<link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
     <link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 </head>
-<body ng-app="instantsearch">
+<body class="back" ng-app="instantsearch">
 		<div ng-controller="instantSearchCtrl">
-			<h3 class="headName">Ajax Live search using AngularJs</h3>
-			<div class="bar">
-				<input type="text" class="search" ng-model="searchString" placeholder="Enter your search terms" />
+			<h3 class="headName">Search Stock Image</h3>
+			<div class="bar gallery-image">
+				<input type="text" class="search" ng-model="searchString" placeholder="Enter Stock Code" />
 			</div>
+			<div class="gallery-image">
+				<div class="img-box" ng-repeat="i in items | searchFor:searchString">
+					<img ng-src="img/{{i.code}}.jpg" />
+					<div class="transparent-box">
+						<div class="caption">
+						  <p class="title">{{i.title}}</p>
+						  <p class="opacity-low">{{i.location}}</p>
+						</div>
+					 </div> 
+				</div>
+			</div>
+			<!--
 			<ul class="data-ctrl">
 				<li ng-repeat="i in items | searchFor:searchString">
 					<p>{{i.title}}</p>
 					<img ng-src="img/{{i.code}}.jpg" width="200px" height="200px" />
 				</li>
 			</ul>
+			-->
 		</div>
 	</body>
 <script src="js/site.js"></script>

@@ -1,1 +1,112 @@
-body { background-color: aqua; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Raleway;
+  background-color: #202125;
+}
+
+.back {
+	background-color: #1d62a2 ;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.0em;
+    letter-spacing: 1px;
+    padding: 40px;
+    color: white;
+}
+
+h3.headName {
+	color: #fff;
+	text-align: center;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image img {
+  height: 300px;
+  width: 300px;
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+}
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  display: inline-block;
+  color: black;
+  position: relative;
+  background-color: white;
+}
+
+.caption {
+  position: absolute;
+  top:250px;
+  bottom: 0;
+  left: 20px;
+  xopacity: 0.0;
+  xtransition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 300px;
+  width: 300px;
+  background-color:rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+  transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+  xbackground-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+  xtransform: translateY(-20px);
+  xopacity: 1.0;
+}
+
+.img-box:hover {
+  cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+  font-size: 1.5em;
+}
+
+p.title {
+   font-size:18px;
+   background-color: yellow;
+   padding: 2px 5px 2px 5px;
+}
+
+.opacity-low {
+	margin-top:-20px;
+  opacity: 0.5;
+}
+
+.bar input {
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px 5%;
+  font-size:20px;
+  border: thin #8fc400 solid;
+}
